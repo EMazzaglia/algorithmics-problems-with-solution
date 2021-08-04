@@ -1,7 +1,9 @@
+package Trees;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostOrderTraversalMain {
+public class InOrderTraversalMain {
 
     public static void main(String[] args) {
         TreeNode tree1 = new TreeNode(5);
@@ -18,20 +20,20 @@ public class PostOrderTraversalMain {
 
         List<Integer> tree1Traversal = new ArrayList<>();
         List<Integer> tree2Traversal = new ArrayList<>();
-        System.out.println(postOrderTraversal(tree1,tree1Traversal));
-        System.out.println((postOrderTraversal(tree2,tree2Traversal)));
+        System.out.println(inorderTraversal(tree1,tree1Traversal));
+        System.out.println((inorderTraversal(tree2,tree2Traversal)));
+
     }
 
-     /*
-        tree1 postOrderTraversal traversal should be: [5, 3, 1, 7, 6]
-        tree2 postOrderTraversal traversal should be: [3, 1, 6, 5, 7]
-     */
+    /*
+        Output of the inorder traversal is [1,3,5,6,7] in both trees
+    */
 
-    public static List<Integer> postOrderTraversal(TreeNode root,List<Integer> tree1Traversal) {
+    public static List<Integer> inorderTraversal(TreeNode root,List<Integer> tree1Traversal) {
         if(root == null) return tree1Traversal;
-        postOrderTraversal(root.leftNode,tree1Traversal);
-        postOrderTraversal(root.rightNode,tree1Traversal);
+        inorderTraversal(root.leftNode,tree1Traversal);
         tree1Traversal.add(root.value);
+        inorderTraversal(root.rightNode,tree1Traversal);
         return tree1Traversal;
     }
 
