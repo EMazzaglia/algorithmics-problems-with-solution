@@ -30,15 +30,14 @@ public class RemoveDups {
             while(p2 != null){
                 if(p2.value == p1.value){
                     previousNode.next = p2.next;
-                    p2 = p2.next;
                 } else {
                     previousNode = p2;
-                    p2 = p2.next;
                 }
+                p2 = p2.next;
             }
             p1 = p1.next;
         }
     }
 
-    // Time complexity of the first approach is O(N^2) but the space complexity is O(1) since we do it on the same list. 
+    // Time complexity of the first approach is O(N^2) but the space complexity is O(1) since we do it on the same list.
 }
