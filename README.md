@@ -1,4 +1,8 @@
-# tree-traversals
-This repo host an implementation for preorder, inorder and postorder traversal on trees. 
+# Algorithmic problems with solutions written in Java
 
-Given two trees it returns true or false if the traversals are the same.
+This repo contains several problems with it's solutions done by me. 
+Ill add the time and space complexity as I can.
+
+If you have any comments feel free to reach me on emilianomazzaglia@gmail.com
+Or create an issue with ur solution/observation.
+
