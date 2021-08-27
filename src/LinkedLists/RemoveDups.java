@@ -1,43 +1,23 @@
-package LinkedLists;
-
-public class RemoveDups {
-
+class MyClass {
+    static String name;
+    MyClass(String n) {
+        name = n;
+    }
+    public boolean equals(Object o) {
+        MyClass m = (MyClass) o;
+        if (m.name != null) {
+            return true;
+        }
+        return false;
+    }
     public static void main(String[] args) {
-        Node head = new Node(5);
-        head.next = new Node(8);
-        head.next.next = new Node(5);
-        head.next.next.next = new Node(11);
-        head.next.next.next.next = new Node(3);
-        head.next.next.next.next = new Node(11);
-        head.next.next.next.next.next = new Node(5);
-        head.next.next.next.next.next.next = new Node(8);
-        head.next.next.next.next.next.next.next = new Node(27);
-
-        removeDups(head);
-
-        while(head != null) {
-            System.out.println(head.value);
-            head = head.next;
-        }
-
+        MyClass m1 = new MyClass("guitar");
+        MyClass m2 = new MyClass("tv");
+        MyClass m3 = new MyClass(null);
+        System.out.println(
+                m1.equals(m2) + "," +
+                        m2.equals(m3) + "," +
+                        (m3 == m3)
+        );
     }
-    public static void removeDups(Node head){
-        if(head.next == null) return;
-        Node p1 = head;
-        while(p1 != null){
-            Node p2 = p1.next;
-            Node previousNode = p1;
-            while(p2 != null){
-                if(p2.value == p1.value){
-                    previousNode.next = p2.next;
-                } else {
-                    previousNode = p2;
-                }
-                p2 = p2.next;
-            }
-            p1 = p1.next;
-        }
-    }
-
-    // Time complexity of the first approach is O(N^2) but the space complexity is O(1) since we do it on the same list.
 }
